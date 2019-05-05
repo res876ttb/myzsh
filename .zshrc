@@ -12,7 +12,11 @@ source $ZSH/oh-my-zsh.sh
 
 unsetopt share_history
 
-alias ls="ls -F --color=auto"
-alias la="ls -aF --color=auto"
-alias ll="ls -lhF --color=auto"
-alias lal="ls -alhF --color=auto"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # do nothing
+else
+  alias ls="ls -F --color=auto"
+  alias la="ls -aF --color=auto"
+  alias ll="ls -lhF --color=auto"
+  alias lal="ls -alhF --color=auto"
+fi
