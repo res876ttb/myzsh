@@ -15,5 +15,6 @@ git clone https://github.com/res876ttb/myzsh.git ~/.myzsh
 cd ~/.myzsh
 
 # creaet symbolic link to $HOME
+mv $HOME/.zshrc $HOME/.zshrc.$(date "+%Y.%m.%d-%H:%M:%S").2
 ln -s $PWD/.zshrc $HOME/
 
