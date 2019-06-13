@@ -21,5 +21,5 @@ else
   alias lal="ls -alhF --color=auto"
 fi
 
-# export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.bin:$PATH
 export LS_COLORS=$LS_COLORS:'di=34'
