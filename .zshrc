@@ -22,3 +22,5 @@ else
 fi
 
 export PATH=$HOME/.bin:$PATH
+
+source $HOME/.zsh_profile

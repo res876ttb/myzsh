@@ -22,4 +22,6 @@ ln -s $PWD/.zshrc $HOME/
 # create link of custom theme to oh my zsh
 ln -s $HOME/.myzsh/ys.zsh-theme $HOME/.oh-my-zsh/custom/myys.zsh-theme
 
+touch $HOME/.zsh_profile
+
 exec zsh
