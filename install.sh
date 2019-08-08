@@ -19,4 +19,7 @@ cd ~/.myzsh
 mv $HOME/.zshrc $HOME/.zshrc.$(date "+%Y.%m.%d-%H:%M:%S").2
 ln -s $PWD/.zshrc $HOME/
 
+# create link of custom theme to oh my zsh
+ln -s $HOME/.myzsh/ys.zsh-theme $HOME/.oh-my-zsh/custom/myys.zsh-theme
+
 exec zsh

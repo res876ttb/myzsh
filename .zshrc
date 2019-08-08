@@ -1,5 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="ys"
+ZSH_THEME="myys"
 plugins=(
   zsh-autosuggestions
   shrink-path
@@ -22,4 +22,3 @@ else
 fi
 
 export PATH=$HOME/.bin:$PATH
-export LS_COLORS=$LS_COLORS:'di=34'
