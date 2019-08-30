@@ -1,5 +1,9 @@
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="myys"
+if [[ "$BACKGROUND" == "black" ]]; then
+  ZSH_THEME="ys"
+else
+  ZSH_THEME="myys"
+fi
 plugins=(
   zsh-autosuggestions
   shrink-path
