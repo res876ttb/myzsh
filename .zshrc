@@ -2,7 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 if [[ "$BACKGROUND" == "black" ]]; then
   ZSH_THEME="ys"
 else
-  ZSH_THEME="myys"
+  ZSH_THEME="ys"
 fi
 plugins=(
   zsh-autosuggestions
