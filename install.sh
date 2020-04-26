@@ -13,10 +13,18 @@ git clone https://github.com/res876ttb/myzsh.git ~/.myzsh
 cd ~/.myzsh
 
 # Backup original script
-mv $HOME/.zshrc $HOME/.zshrc.$(date "+%Y.%m.%d-%H:%M:%S")
-mv $HOME/.p10k.zsh $HOME/.p10k.zsh.$(date "+%Y.%m.%d-%H:%M:%S")
-mv $HOME/.zimrc $HOME/.zimrc.$(date "+%Y.%m.%d-%H:%M:%S")
-mv $HOME/.zlogin $HOME/.zlogin.$(date "+%Y.%m.%d-%H:%M:%S")
+if [ -f $HOME/.zshrc ]; then
+  mv $HOME/.zshrc $HOME/.zshrc.$(date "+%Y.%m.%d-%H:%M:%S")
+fi
+if [ -f $HOME/.p10k.zsh ]; then
+  mv $HOME/.p10k.zsh $HOME/.p10k.zsh.$(date "+%Y.%m.%d-%H:%M:%S")
+fi
+if [ -f $HOME/.zimrc ]; then
+  mv $HOME/.zimrc $HOME/.zimrc.$(date "+%Y.%m.%d-%H:%M:%S")
+fi
+if [ -f $HOME/.zlogin ]; then
+  mv $HOME/.zlogin $HOME/.zlogin.$(date "+%Y.%m.%d-%H:%M:%S")
+fi
 
 # creaet symbolic link to $HOME
 ln -s $PWD/.zshrc $HOME/
