@@ -3,7 +3,12 @@
 which zsh
 
 # backup original tmux configuration
-mv $HOME/.zshrc $HOME/.zshrc.$(date "+%Y.%m.%d-%H:%M:%S")
+if [ -f $HOME/.zshrc ]; then
+  mv $HOME/.zshrc $HOME/.zshrc.$(date "+%Y.%m.%d-%H:%M:%S")
+fi
+
+rm -rf ~/.myzsh
+rm -rf ~/.zim
 
 # install oh-my-zsh
 curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
