@@ -130,6 +130,9 @@ unsetopt share_history
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # do nothing
+  alias la="ls -a"
+  alias ll="ls -lh"
+  alias lal="ls -alh"
 else
   alias ls="ls -F --color=auto"
   alias la="ls -aF --color=auto"
@@ -142,3 +145,24 @@ export PATH=$HOME/.local/bin:$PATH
 
 source $HOME/.zsh_profile
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#
+# Useful function
+#
+
+re='^[0-9]+$'
+
+d () {
+  if [[ $1 =~ $re ]]; then
+    zshrc_dir=$(dirs -v | head -10 | sed -n $(echo $1 + 1 | bc)p | cut -d$'\t' -f2)
+    echo $zshrc_dir
+    cd $(echo $zshrc_dir | sed "s#^~#$HOME#")
+  else
+    if [[ -n $1 ]]
+    then
+      dirs "$@"
+    else
+      dirs -v | head -10
+    fi
+  fi
+}
