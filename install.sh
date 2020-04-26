@@ -16,11 +16,13 @@ cd ~/.myzsh
 mv $HOME/.zshrc $HOME/.zshrc.$(date "+%Y.%m.%d-%H:%M:%S")
 mv $HOME/.p10k.zsh $HOME/.p10k.zsh.$(date "+%Y.%m.%d-%H:%M:%S")
 mv $HOME/.zimrc $HOME/.zimrc.$(date "+%Y.%m.%d-%H:%M:%S")
+mv $HOME/.zlogin $HOME/.zlogin.$(date "+%Y.%m.%d-%H:%M:%S")
 
 # creaet symbolic link to $HOME
 ln -s $PWD/.zshrc $HOME/
 ln -s $PWD/.p10k.zsh $HOME/
 ln -s $PWD/.zimrc $HOME/
+ln -s $PWD/.zlogin $HOME/
 
 touch $HOME/.zsh_profile
 
