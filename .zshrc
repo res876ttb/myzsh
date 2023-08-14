@@ -130,17 +130,10 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 unsetopt share_history
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  # do nothing
-  alias la="ls -a"
-  alias ll="ls -lh"
-  alias lal="ls -alh"
-else
-  alias ls="ls -F --color=auto"
-  alias la="ls -aF --color=auto"
-  alias ll="ls -lhF --color=auto"
-  alias lal="ls -alhF --color=auto"
-fi
+alias ls="ls -F --color=auto"
+alias la="ls -aF --color=auto"
+alias ll="ls -lhF --color=auto"
+alias lal="ls -alhF --color=auto"
 
 export PATH=$HOME/.bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
