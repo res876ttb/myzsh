@@ -161,3 +161,13 @@ d () {
     fi
   fi
 }
+
+function note() {
+  if [[ $# -lt 2 ]]; then
+    echo "Usage: note <title> <command>"
+    echo "Description: This command is used to run command with a note so that you can find it in history easily"
+    return
+  fi
+  shift
+  $@
+}
