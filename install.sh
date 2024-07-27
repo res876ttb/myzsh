@@ -8,6 +8,9 @@ Note that the following files will be replaced:
 .zshrc, .p10k.zsh, .zimrc, .zlogin
 Also, the .zshenv will be modified: being created or adding one line "skip_global_compinit=1"
 
+Besides, the following packages will be installed under your home directory:
+zoxide, fzf
+===========
 EOF
 read -p "Press enter to continue or ctrl+c to abort:"
 
@@ -60,6 +63,18 @@ curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh 
 # Setup zoxide
 chmod 664 $HOME/.zcompdump.zwc
 rm $HOME/.zcompdump*
+
+# Install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+
+# Setup fzf
+$HOME/.fzf/install --key-bindings --completion --no-update-rc
+
+cat << EOF
+==========================================================
+All required components for fency zsh shell are installed!
+Enjoy!🥳
+EOF
 
 # Launch zsh
 cd $cwd

@@ -115,8 +115,11 @@ source ${ZIM_HOME}/init.zsh
 # zsh-history-substring-search
 #
 
-# Setup zoxide
+# Init zoxide
 eval "$($HOME/.local/bin/zoxide init --cmd cd zsh)"
+
+# Init fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
 bindkey '^[[A' history-substring-search-up
