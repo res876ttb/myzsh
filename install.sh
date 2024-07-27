@@ -7,6 +7,7 @@ This script will help you creating fancy zsh shell with auto completion features
 Note that the following files will be replaced:
 .zshrc, .p10k.zsh, .zimrc, .zlogin
 Also, the .zshenv will be modified: being created or adding one line "skip_global_compinit=1"
+
 EOF
 read -p "Press enter to continue or ctrl+c to abort:"
 
@@ -52,6 +53,12 @@ if [ -e "$HOME/.zshenv" ]; then
 else
 	echo "skip_global_compinit=1" > $HOME/.zshenv
 fi
+
+# Install zoxide
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
+# Setup zoxide
+rm ~/.zcompdump*
 
 # Launch zsh
 cd $cwd
