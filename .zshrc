@@ -116,7 +116,7 @@ source ${ZIM_HOME}/init.zsh
 #
 
 # Setup zoxide
-eval "$($HOME/.local/bin/zoxide init zsh)"
+eval "$($HOME/.local/bin/zoxide init --cmd cd zsh)"
 
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
 bindkey '^[[A' history-substring-search-up
