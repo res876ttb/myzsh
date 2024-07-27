@@ -58,7 +58,8 @@ fi
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 # Setup zoxide
-rm ~/.zcompdump*
+chmod 664 $HOME/.zcompdump.zwc
+rm $HOME/.zcompdump*
 
 # Launch zsh
 cd $cwd
