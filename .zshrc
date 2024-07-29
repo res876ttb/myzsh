@@ -140,6 +140,10 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
+# Set home/end key binding
+bindkey  "^[[1~"   beginning-of-line
+bindkey  "^[[4~"   end-of-line
+
 unsetopt share_history
 
 alias ls="ls -F --color=auto"
