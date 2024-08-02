@@ -116,7 +116,7 @@ source ${ZIM_HOME}/init.zsh
 #
 
 # Init zoxide
-eval "$($HOME/.local/bin/zoxide init --cmd cd zsh)"
+eval "$($HOME/.local/bin/zoxide init zsh)"
 alias ze="zoxide edit"
 
 # Init fzf
