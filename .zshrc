@@ -144,7 +144,11 @@ bindkey -M vicmd 'j' history-substring-search-down
 bindkey  "^[[1~"   beginning-of-line
 bindkey  "^[[4~"   end-of-line
 
+# Don't share history between zsh sessions
 unsetopt share_history
+
+# Allows ‘>’ redirection to truncate existing files
+setopt clobbe
 
 alias ls="ls -F --color=auto"
 alias la="ls -aF --color=auto"
