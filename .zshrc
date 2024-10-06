@@ -164,16 +164,24 @@ source $HOME/.zsh_profile
 re='^[0-9]+$'
 
 d () {
-  if [[ $1 =~ $re ]]; then
-    zshrc_dir=$(dirs -v | head -10 | sed -n $(echo $1 + 1 | bc)p | cut -d$'\t' -f2)
-    echo $zshrc_dir
-    cd $(echo $zshrc_dir | sed "s#^~#$HOME#")
-  else
-    if [[ -n $1 ]]
-    then
-      dirs "$@"
+  if [[ "$(which fzf)" == "" ]]; then
+    if [[ $1 =~ $re ]]; then
+      zshrc_dir=$(dirs -v | head -10 | sed -n $(echo $1 + 1 | bc)p | cut -d$'\t' -f2)
+      echo $zshrc_dir
+      cd $(echo $zshrc_dir | sed "s#^~#$HOME#")
     else
-      dirs -v | head -10
+      if [[ -n $1 ]]
+      then
+        dirs "$@"
+      else
+        dirs -v | head -10
+      fi
+    fi
+  else
+    zshrc_dir=$(dirs -v | cut -d $'\t' -f2 | fzf --height=10)
+    if [[ "$zshrc_dir" != "" ]]; then
+      echo $zshrc_dir
+      cd $(echo $zshrc_dir | sed "s#^~#$HOME#")
     fi
   fi
 }
