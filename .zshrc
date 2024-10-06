@@ -178,10 +178,10 @@ d () {
       fi
     fi
   else
-    zshrc_dir=$(dirs -v | cut -d $'\t' -f2 | fzf --height=10)
+    zshrc_dir=$(dirs -v | fzf --reverse --nth=2.. --cycle --keep-right --info=inline --border=sharp --height=45% --prompt="Pick a directory > " --preview='ls -Cp --color=always --group-directories-first "$(echo {2..} | sed "s#^~#$HOME#")"' --preview-window=down,30%,sharp | cut -d $'\t' -f2)
     if [[ "$zshrc_dir" != "" ]]; then
       echo $zshrc_dir
-      cd $(echo $zshrc_dir | sed "s#^~#$HOME#")
+      cd "$(echo $zshrc_dir | sed "s#^~#$HOME#")"
     fi
   fi
 }
