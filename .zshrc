@@ -148,7 +148,7 @@ bindkey  "^[[4~"   end-of-line
 unsetopt share_history
 
 # Allows ‘>’ redirection to truncate existing files
-setopt clobbe
+setopt clobber
 
 alias ls="ls -F --color=auto"
 alias la="ls -aF --color=auto"
