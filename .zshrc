@@ -151,6 +151,7 @@ unsetopt share_history
 setopt clobber
 
 alias ls="ls -F --color=auto"
+alias sl="ls -F --color=auto"
 alias la="ls -aF --color=auto"
 alias ll="ls -lhF --color=auto"
 alias lal="ls -alhF --color=auto"
