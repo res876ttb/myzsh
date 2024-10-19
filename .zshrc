@@ -150,6 +150,9 @@ unsetopt share_history
 # Allows ‘>’ redirection to truncate existing files
 setopt clobber
 
+# Set right space to 0 in zsh shell
+export ZLE_RPROMPT_INDENT=0
+
 alias ls="ls -F --color=auto"
 alias sl="ls -F --color=auto"
 alias la="ls -aF --color=auto"
